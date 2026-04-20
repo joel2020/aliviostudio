@@ -3,38 +3,41 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Alivio Studio designs ultra-premium custom websites, AI automations, and operating systems for growth-minded service businesses." />
-  <title>Alivio Studio — Boutique Digital Systems Studio</title>
+  <meta name="description" content="Alivio Studio builds premium websites and intelligent systems for modern businesses." />
+  <title>Alivio Studio — Premium Websites & Intelligent Systems</title>
   <style>
     :root {
-      --ivory: #f5f1ea;
-      --bone: #ede6db;
-      --surface: #faf8f3;
-      --ink: #1b1916;
-      --muted: #60584f;
-      --line: #d6cec0;
-      --accent: #1f4b46;
-      --accent-soft: #dfe9e5;
-      --shadow: 0 12px 36px rgba(29, 24, 18, 0.08);
-      --shadow-soft: 0 6px 20px rgba(25, 20, 14, 0.06);
-      --radius: 14px;
-      --content: min(1220px, 92vw);
-      --tight: min(840px, 92vw);
-      --ease: 500ms cubic-bezier(.22,.61,.36,1);
-      --header: 78px;
+      --bg: #f5f1e9;
+      --surface: #f9f6f0;
+      --surface-2: #efe8dc;
+      --ink: #1f1b17;
+      --muted: #635b52;
+      --line: #d7cebf;
+      --accent: #1f4f49;
+      --accent-2: #2c6a61;
+      --light: #fff;
+      --radius: 18px;
+      --radius-sm: 12px;
+      --shadow: 0 14px 44px rgba(28, 23, 19, 0.09);
+      --shadow-soft: 0 8px 24px rgba(26, 21, 16, 0.07);
+      --max: min(1240px, 92vw);
+      --tight: min(760px, 92vw);
+      --header: 84px;
+      --ease: 520ms cubic-bezier(.22,.61,.36,1);
     }
 
     [data-theme="dark"] {
-      --ivory: #12110f;
-      --bone: #171512;
-      --surface: #1d1a16;
-      --ink: #f0ebe2;
-      --muted: #b9afa0;
-      --line: #332d25;
-      --accent: #87b3ac;
-      --accent-soft: #202f2c;
-      --shadow: 0 16px 40px rgba(0, 0, 0, 0.34);
-      --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.24);
+      --bg: #12100e;
+      --surface: #191613;
+      --surface-2: #201b16;
+      --ink: #f3ece2;
+      --muted: #baaf9f;
+      --line: #332c25;
+      --accent: #80aea6;
+      --accent-2: #97c0b9;
+      --light: #f3ece2;
+      --shadow: 0 18px 48px rgba(0,0,0,0.36);
+      --shadow-soft: 0 10px 28px rgba(0,0,0,0.26);
     }
 
     * { box-sizing: border-box; }
@@ -42,8 +45,8 @@
     body {
       margin: 0;
       color: var(--ink);
-      background: var(--ivory);
-      font: 400 16px/1.7 "Inter", "Avenir Next", "Segoe UI", sans-serif;
+      background: var(--bg);
+      font: 400 16px/1.72 "Inter", "Avenir Next", "Segoe UI", sans-serif;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
     }
@@ -51,44 +54,46 @@
     h1,h2,h3,h4 {
       margin: 0;
       color: var(--ink);
-      font-family: "Canela", "Iowan Old Style", "Palatino Linotype", serif;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
       line-height: 1.08;
-      letter-spacing: -0.018em;
+      letter-spacing: -0.02em;
       font-weight: 500;
     }
+
     p { margin: 0; color: var(--muted); }
     a { color: inherit; text-decoration: none; }
 
     .skip-link {
       position: absolute;
-      left: -999px;
-      top: -999px;
-      padding: .7rem 1rem;
-      border-radius: 8px;
+      top: -100px;
+      left: 1rem;
       background: var(--accent);
       color: #fff;
+      padding: .65rem .9rem;
+      border-radius: 8px;
       z-index: 999;
     }
-    .skip-link:focus { top: 1rem; left: 1rem; }
+    .skip-link:focus { top: .7rem; }
 
-    .container { width: var(--content); margin-inline: auto; }
+    .container { width: var(--max); margin-inline: auto; }
     .tight { width: var(--tight); margin-inline: auto; }
 
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 300;
+      z-index: 200;
       min-height: var(--header);
       border-bottom: 1px solid transparent;
-      background: color-mix(in oklab, var(--ivory) 86%, transparent);
-      backdrop-filter: blur(10px);
-      transition: border-color var(--ease), background var(--ease), box-shadow var(--ease);
+      background: color-mix(in oklab, var(--bg) 86%, transparent);
+      backdrop-filter: blur(12px);
+      transition: border-color var(--ease), box-shadow var(--ease), background var(--ease);
     }
     .site-header.scrolled {
       border-color: var(--line);
-      background: color-mix(in oklab, var(--ivory) 94%, transparent);
       box-shadow: var(--shadow-soft);
+      background: color-mix(in oklab, var(--bg) 95%, transparent);
     }
+
     .nav {
       min-height: var(--header);
       display: grid;
@@ -96,39 +101,42 @@
       align-items: center;
       gap: 1rem;
     }
+
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: .7rem;
-      font-size: .78rem;
-      font-weight: 600;
+      gap: .68rem;
+      font-size: .82rem;
       letter-spacing: .16em;
       text-transform: uppercase;
+      font-weight: 600;
     }
     .brand svg { width: 30px; height: 30px; }
 
     .links {
       display: flex;
       justify-content: center;
-      gap: 1.2rem;
-      font-size: .76rem;
-      text-transform: uppercase;
+      flex-wrap: wrap;
+      gap: 1.15rem;
+      font-size: .74rem;
       letter-spacing: .14em;
+      text-transform: uppercase;
       color: var(--muted);
     }
     .links a {
       border-bottom: 1px solid transparent;
-      transition: border-color 220ms ease, color 220ms ease;
+      transition: color .24s ease, border-color .24s ease;
     }
     .links a:hover,
     .links a:focus-visible { color: var(--ink); border-color: var(--accent); }
 
-    .header-actions { display: inline-flex; align-items: center; gap: .65rem; }
+    .header-actions { display: inline-flex; align-items: center; gap: .6rem; }
+
     .mode-btn {
       width: 40px;
       height: 40px;
-      border-radius: 999px;
       border: 1px solid var(--line);
+      border-radius: 999px;
       background: var(--surface);
       color: var(--ink);
       cursor: pointer;
@@ -136,266 +144,274 @@
 
     .btn {
       display: inline-flex;
-      align-items: center;
       justify-content: center;
-      padding: .82rem 1.2rem;
+      align-items: center;
+      gap: .5rem;
       border-radius: 999px;
-      font-size: .75rem;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      font-weight: 600;
       border: 1px solid transparent;
-      transition: all 240ms ease;
+      padding: .82rem 1.2rem;
+      font-size: .74rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all .26s ease;
       cursor: pointer;
     }
     .btn-primary { background: var(--accent); color: #fff; }
-    .btn-primary:hover { filter: brightness(.94); }
-    .btn-ghost { border-color: var(--line); background: transparent; color: var(--ink); }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-primary:hover,
+    .btn-primary:focus-visible { background: var(--accent-2); }
+    .btn-ghost { background: transparent; border-color: var(--line); color: var(--ink); }
+    .btn-ghost:hover,
+    .btn-ghost:focus-visible { border-color: var(--accent); color: var(--accent); }
 
-    section { padding: clamp(4.5rem, 9vw, 9rem) 0; }
+    main section { padding: clamp(4rem, 8vw, 8.8rem) 0; }
+
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: .7rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
+      gap: .68rem;
+      margin-bottom: .95rem;
       font-size: .7rem;
-      font-weight: 700;
       letter-spacing: .2em;
       text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
     }
     .eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; }
 
-    h1 { font-size: clamp(2.5rem, 6.6vw, 6rem); max-width: 12.4ch; }
-    h2 { font-size: clamp(2rem, 4.4vw, 3.7rem); max-width: 16ch; }
-    h3 { font-size: clamp(1.2rem, 2vw, 1.7rem); }
-    .lede { margin-top: 1.25rem; max-width: 58ch; }
+    h1 { font-size: clamp(2.3rem, 6.2vw, 5.5rem); max-width: 12.5ch; }
+    h2 { font-size: clamp(1.9rem, 4.2vw, 3.6rem); max-width: 16.5ch; }
+    h3 { font-size: clamp(1.16rem, 2.1vw, 1.62rem); }
+    .lede { margin-top: 1.2rem; max-width: 60ch; }
 
-    .hero { padding-top: clamp(1.6rem, 3vw, 2.7rem); }
-    .hero-grid {
+    .hero-layout {
       display: grid;
-      gap: 1.6rem;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1.02fr .98fr;
+      gap: clamp(1rem, 2vw, 2rem);
+      align-items: stretch;
     }
 
-    .hero-media {
-      position: relative;
-      min-height: min(78vh, 760px);
-      border-radius: 22px;
-      overflow: clip;
-      border: 1px solid color-mix(in oklab, var(--line) 78%, #0000);
-      box-shadow: var(--shadow);
-      isolation: isolate;
-    }
-    .hero-video {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(.75) contrast(1.05) brightness(.8);
-    }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(130% 90% at 8% 8%, color-mix(in oklab, var(--accent) 34%, transparent), transparent 62%),
-        linear-gradient(112deg, rgba(10, 10, 10, 0.55), rgba(10, 10, 10, 0.17) 50%, rgba(10, 10, 10, 0.6));
-    }
-    .hero-overlay::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(0deg, transparent 0 2px, rgba(255,255,255,.025) 2px 3px);
-      pointer-events: none;
-    }
-
-    .hero-copy {
-      position: relative;
-      z-index: 2;
-      padding: clamp(1.4rem, 3.5vw, 3.4rem);
-      max-width: 760px;
-      color: #f6f1e6;
-      align-self: end;
+    .hero-content {
+      padding: clamp(1rem, 2vw, 1.5rem) 0;
       display: grid;
-      align-content: end;
-      min-height: 100%;
+      align-content: center;
     }
-    .hero-copy p { color: color-mix(in oklab, #f6f1e6 80%, #fff 20%); }
-    .hero-actions { margin-top: 1.8rem; display: flex; gap: .75rem; flex-wrap: wrap; }
 
-    .hero-metrics {
-      margin-top: 2rem;
+    .hero-actions { margin-top: 1.6rem; display: flex; flex-wrap: wrap; gap: .72rem; }
+    .trust-line {
+      margin-top: 1.2rem;
       padding-top: 1rem;
-      border-top: 1px solid rgba(248, 241, 229, .28);
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: .8rem;
-      max-width: 620px;
-    }
-    .hero-metrics span { display: block; font-size: .85rem; color: rgba(248,241,229,.92); }
-    .hero-metrics strong { display: block; font-family: "Canela", serif; font-size: 1.45rem; color: #fff; }
-
-    .positioning {
       border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: color-mix(in oklab, var(--surface) 82%, transparent);
-    }
-
-    .story-grid,
-    .services,
-    .cases,
-    .industry-grid,
-    .testimonials {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .media-card,
-    .panel,
-    .case,
-    .quote,
-    details,
-    .cta {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .media-card {
-      overflow: clip;
-      min-height: 300px;
-      position: relative;
-      isolation: isolate;
-    }
-    .media-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(.84) contrast(1.03);
-    }
-    .media-card figcaption {
-      position: absolute;
-      inset: auto 1rem 1rem 1rem;
-      font-size: .78rem;
-      letter-spacing: .09em;
-      text-transform: uppercase;
-      color: #f7f1e4;
-      background: rgba(10, 10, 10, 0.34);
-      border: 1px solid rgba(255,255,255,.18);
-      padding: .45rem .6rem;
-      backdrop-filter: blur(5px);
-      width: max-content;
-      max-width: calc(100% - 2rem);
-    }
-
-    .panel,
-    .case,
-    .quote,
-    details,
-    .cta { padding: clamp(1rem, 2.4vw, 1.5rem); }
-
-    .services { grid-template-columns: 1fr; }
-    .panel ul { margin: .8rem 0 0; padding-left: 1rem; }
-
-    .case .result {
-      margin-top: .8rem;
-      padding-top: .7rem;
-      border-top: 1px dashed color-mix(in oklab, var(--accent) 42%, var(--line));
-      color: var(--ink);
-      font-weight: 600;
-    }
-    .case-head {
-      display: flex;
-      justify-content: space-between;
-      gap: .8rem;
-      align-items: baseline;
-      margin-bottom: .6rem;
-    }
-
-    .architecture {
-      padding: clamp(1rem, 3vw, 1.8rem);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: color-mix(in oklab, var(--surface) 94%, var(--accent-soft) 6%);
-      box-shadow: var(--shadow);
-    }
-    .arch-grid { display: grid; gap: .8rem; }
-    .arch-item {
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: color-mix(in oklab, var(--surface) 92%, var(--accent-soft));
-      padding: .9rem;
-      position: relative;
-    }
-
-    .industry-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .industry {
-      list-style: none;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: .85rem .9rem;
-      background: color-mix(in oklab, var(--surface) 95%, var(--accent-soft) 5%);
+      max-width: 58ch;
       color: var(--ink);
       font-weight: 500;
     }
 
-    .process { display: grid; gap: .8rem; }
+    .hero-media {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid color-mix(in oklab, var(--line) 88%, transparent);
+      min-height: min(74vh, 700px);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+      background: #0f100f;
+    }
+
+    .hero-video,
+    .hero-poster {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-video { filter: saturate(.74) contrast(1.02) brightness(.78); }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(120% 90% at 12% 6%, rgba(32, 89, 80, .45), rgba(9,9,9,.38) 52%, rgba(8,8,8,.64) 100%),
+        linear-gradient(102deg, rgba(5,5,5,.45), rgba(5,5,5,.12) 46%, rgba(5,5,5,.58));
+    }
+
+    .hero-chip {
+      position: absolute;
+      z-index: 2;
+      right: 1.1rem;
+      bottom: 1.1rem;
+      border: 1px solid rgba(255,255,255,.24);
+      color: rgba(255,255,255,.92);
+      padding: .5rem .65rem;
+      background: rgba(16,16,16,.34);
+      backdrop-filter: blur(4px);
+      border-radius: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: .68rem;
+      font-weight: 600;
+    }
+
+    .positioning { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: color-mix(in oklab, var(--surface) 84%, transparent); }
+
+    .split, .services-grid, .why-grid, .results-grid, .industry-grid, .testimonials-grid, .footer-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .media {
+      position: relative;
+      min-height: 320px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+    }
+    .media img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.86) contrast(1.02); }
+    .media figcaption {
+      position: absolute;
+      left: .9rem;
+      bottom: .9rem;
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: #f7f3ea;
+      background: rgba(8,8,8,.42);
+      border: 1px solid rgba(255,255,255,.2);
+      padding: .42rem .56rem;
+      border-radius: 8px;
+      backdrop-filter: blur(5px);
+    }
+
+    .card,
+    .result,
+    .quote,
+    details,
+    .cta-wrap,
+    .architecture {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-soft);
+      padding: clamp(1rem, 2.1vw, 1.45rem);
+    }
+
+    .services-grid .card ul,
+    .result ul { margin: .78rem 0 0; padding-left: 1rem; }
+
+    .services-grid { grid-template-columns: 1.25fr .9fr .9fr; }
+
+    .why-grid { grid-template-columns: 1.1fr .9fr; }
+    .why-list { display: grid; gap: .75rem; }
+
+    .result-head { display: flex; justify-content: space-between; gap: .8rem; align-items: baseline; margin-bottom: .5rem; }
+    .outcome { margin-top: .8rem; padding-top: .7rem; border-top: 1px dashed color-mix(in oklab, var(--line) 50%, var(--accent)); color: var(--ink); font-weight: 600; }
+
+    .architecture {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(155deg, color-mix(in oklab, var(--surface) 95%, transparent), color-mix(in oklab, var(--surface-2) 80%, var(--accent) 20%));
+    }
+    .arch-grid {
+      display: grid;
+      gap: .72rem;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+    .arch-item {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: color-mix(in oklab, var(--surface) 90%, var(--surface-2));
+      padding: .8rem;
+      position: relative;
+    }
+    .arch-item:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: -.38rem;
+      top: 50%;
+      width: .74rem;
+      border-top: 1px dashed color-mix(in oklab, var(--accent) 50%, var(--line));
+      transform: translateY(-50%);
+    }
+
+    .workflow-tags {
+      margin-top: .9rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+    }
+    .tag {
+      border: 1px solid color-mix(in oklab, var(--accent) 24%, var(--line));
+      background: color-mix(in oklab, var(--surface) 86%, var(--accent) 14%);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: .34rem .62rem;
+      font-size: .7rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .industry-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); list-style: none; padding: 0; margin: 1.2rem 0 0; }
+    .industry-grid li {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface);
+      padding: .85rem .9rem;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .process { display: grid; gap: .7rem; margin-top: 1.2rem; }
     .step {
       display: grid;
       grid-template-columns: auto 1fr;
+      gap: .8rem;
       align-items: start;
-      gap: .85rem;
     }
     .num {
-      width: 46px;
-      height: 46px;
+      width: 42px;
+      height: 42px;
       border-radius: 999px;
       border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--accent);
       display: grid;
       place-items: center;
-      color: var(--accent);
       font-weight: 700;
-      background: var(--surface);
+      font-size: .8rem;
+      letter-spacing: .08em;
     }
 
-    .testimonials { grid-template-columns: 1fr; }
-    blockquote { margin: 0; }
+    .testimonials-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .quote p { color: var(--ink); }
-    cite {
-      display: block;
-      margin-top: .7rem;
-      font-size: .84rem;
-      color: var(--muted);
-      font-style: normal;
-    }
+    cite { margin-top: .66rem; display: block; font-size: .84rem; color: var(--muted); font-style: normal; }
 
     details { margin-bottom: .65rem; }
     summary {
       list-style: none;
       display: flex;
       justify-content: space-between;
-      gap: .7rem;
+      gap: .8rem;
+      color: var(--ink);
       cursor: pointer;
       font-weight: 600;
-      color: var(--ink);
     }
     summary::after { content: "+"; color: var(--accent); font-size: 1.2rem; line-height: 1; }
     details[open] summary::after { content: "−"; }
-    details p { margin-top: .6rem; }
+    details p { margin-top: .62rem; }
 
-    .cta {
+    .cta-wrap {
+      border-radius: 22px;
       display: grid;
-      gap: 1.1rem;
-      grid-template-columns: 1fr;
-      border-radius: 20px;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
     }
+
     form { display: grid; gap: .75rem; }
-    label { font-size: .88rem; color: var(--muted); font-weight: 600; }
+    label { font-size: .86rem; color: var(--muted); font-weight: 600; }
     input, textarea {
       width: 100%;
       font: inherit;
@@ -403,65 +419,55 @@
       background: color-mix(in oklab, var(--surface) 88%, transparent);
       border: 1px solid var(--line);
       border-radius: 10px;
-      padding: .72rem .82rem;
+      padding: .72rem .8rem;
     }
+    textarea { min-height: 110px; resize: vertical; }
     input:focus-visible, textarea:focus-visible {
-      outline: 2px solid color-mix(in oklab, var(--accent) 55%, transparent);
+      outline: 2px solid color-mix(in oklab, var(--accent) 56%, transparent);
       outline-offset: 1px;
       border-color: var(--accent);
     }
-    textarea { min-height: 120px; resize: vertical; }
 
     footer {
-      padding: 2.5rem 0;
-      margin-top: clamp(3rem, 7vw, 5rem);
+      margin-top: clamp(3rem, 6vw, 5rem);
       border-top: 1px solid var(--line);
+      padding: 2.3rem 0;
     }
-    .foot {
-      display: grid;
-      gap: 1.1rem;
-      grid-template-columns: 1fr;
-    }
+    .footer-grid { grid-template-columns: 1.15fr .85fr .8fr; }
 
     [data-reveal] {
       opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 650ms ease, transform 650ms ease;
+      transform: translateY(14px);
+      transition: opacity .7s ease, transform .7s ease;
     }
     [data-reveal].shown { opacity: 1; transform: none; }
 
-    @media (min-width: 920px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .story-grid { grid-template-columns: 1.1fr .9fr; align-items: stretch; }
-      .services { grid-template-columns: 1.1fr .9fr .9fr; }
-      .cases { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .arch-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-      .testimonials { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .cta { grid-template-columns: 1fr 1fr; }
-      .foot { grid-template-columns: 1.2fr .8fr .8fr; }
-    }
-
-    @media (max-width: 1020px) {
+    @media (max-width: 1080px) {
       .nav { grid-template-columns: auto auto; justify-content: space-between; }
       .links, .header-actions .btn-primary { display: none; }
+      .hero-layout,
+      .split,
+      .services-grid,
+      .why-grid,
+      .results-grid,
+      .arch-grid,
+      .industry-grid,
+      .testimonials-grid,
+      .cta-wrap,
+      .footer-grid { grid-template-columns: 1fr; }
+      .arch-item::after { display: none; }
     }
 
     @media (max-width: 760px) {
-      .hero-media { min-height: 640px; }
+      .hero-media { min-height: 500px; }
       .hero-video { display: none; }
-      .hero-media {
-        background-image:
-          radial-gradient(120% 90% at 10% 0%, rgba(32, 79, 73, 0.55), rgba(13, 14, 13, 0.5) 55%),
-          url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80");
-        background-size: cover;
-        background-position: center;
-      }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation-duration: 1ms !important; transition-duration: 1ms !important; }
       [data-reveal] { opacity: 1; transform: none; }
+      .hero-video { display: none; }
     }
   </style>
 </head>
@@ -471,137 +477,155 @@
   <header class="site-header" id="site-header">
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Alivio Studio home">
-        <svg viewBox="0 0 40 40" aria-hidden="true" role="img">
-          <rect x="2" y="2" width="36" height="36" rx="10" fill="none" stroke="currentColor" stroke-width="2" />
-          <path d="M9 27.2 16.8 13.4l5.1 8 3-4.8 5.2 10.4" fill="none" stroke="var(--accent)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <rect x="2" y="2" width="36" height="36" rx="10" fill="none" stroke="currentColor" stroke-width="2"></rect>
+          <path d="M9 27.5 16.6 13.2l5.2 8.4 3-4.8 5.1 10.7" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
         <span>Alivio Studio</span>
       </a>
 
       <nav class="links" aria-label="Primary">
-        <a href="#positioning">Positioning</a>
         <a href="#services">Services</a>
+        <a href="#process">Process</a>
         <a href="#results">Results</a>
-        <a href="#architecture">Architecture</a>
+        <a href="#industries">Industries</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </nav>
 
       <div class="header-actions">
         <button class="mode-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">◐</button>
-        <a class="btn btn-primary" href="#contact">Book Discovery</a>
+        <a class="btn btn-primary" href="#contact">Book a Discovery Call</a>
       </div>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" id="top">
-      <div class="container hero-grid">
-        <article class="hero-media" data-reveal aria-label="Cinematic atmospheric hero video">
-          <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80">
-            <source src="https://cdn.coverr.co/videos/coverr-skyscraper-window-reflections-1579/1080p.mp4" type="video/mp4" />
+    <section id="top">
+      <div class="container hero-layout">
+        <article class="hero-content" data-reveal>
+          <p class="eyebrow">Premium Digital Agency</p>
+          <h1>Premium websites and AI systems for businesses that want to operate better.</h1>
+          <p class="lede">We design the front end of your brand and the systems behind it — from high-converting websites to automations that improve follow-up, organization, and efficiency.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Book a Discovery Call</a>
+            <a class="btn btn-ghost" href="#services">View Services</a>
+          </div>
+          <p class="trust-line">Built for modern businesses that care about credibility, speed, and better systems.</p>
+        </article>
+
+        <figure class="hero-media" data-reveal aria-label="Cinematic hero visual treatment">
+          <img class="hero-poster" src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1900&q=80" alt="Editorial architectural composition with warm stone, glass, and shadow" fetchpriority="high" />
+          <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1900&q=80" aria-label="Muted cinematic loop of modern architectural surfaces and light movement">
+            <source src="https://cdn.coverr.co/videos/coverr-moving-through-architectural-lines-1574/1080p.mp4" type="video/mp4" />
           </video>
           <div class="hero-overlay" aria-hidden="true"></div>
-
-          <div class="hero-copy">
-            <p class="eyebrow">Premium Digital Infrastructure</p>
-            <h1>Custom websites and intelligent systems for operators who value quality.</h1>
-            <p class="lede">Alivio Studio designs editorial-grade web experiences, AI automations, and workflow architecture that raise trust, tighten operations, and protect lead flow.</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#contact">Start a Project</a>
-              <a class="btn btn-ghost" href="#results">View Case Outcomes</a>
-            </div>
-            <div class="hero-metrics" aria-label="Performance highlights">
-              <span><strong>48s</strong> Typical first response automation</span>
-              <span><strong>4–10 wks</strong> Build cycle for core engagements</span>
-              <span><strong>3 layers</strong> Brand, conversion, operations</span>
-            </div>
-          </div>
-        </article>
+          <figcaption class="hero-chip">Cinematic Campaign Visual</figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="positioning" id="positioning">
       <div class="tight" data-reveal>
         <p class="eyebrow">Positioning</p>
-        <h2>We build the visible brand and the invisible operating layer, together.</h2>
-        <p class="lede">Most teams treat websites and operations as separate workstreams. We align both: premium presentation, decisive lead handling, and structured process design so your company looks as precise as it runs.</p>
+        <h2>Most businesses do not need more noise. They need a stronger digital presence, cleaner operations, and systems that reduce friction.</h2>
+        <p class="lede">Alivio Studio helps companies look more credible online and run more effectively behind the scenes through custom websites, AI automations, and workflow design built around how the business actually operates.</p>
       </div>
     </section>
 
     <section id="services">
       <div class="container">
-        <div class="story-grid" style="margin-bottom:1.2rem;" data-reveal>
+        <div class="split" style="grid-template-columns:1.08fr .92fr; margin-bottom:1.1rem;" data-reveal>
           <div>
             <p class="eyebrow">Services</p>
-            <h2>High-trust digital presence, engineered workflows, and AI-enabled execution.</h2>
+            <h2>Better websites. Smarter systems. Stronger operations.</h2>
           </div>
-          <figure class="media-card">
-            <img loading="lazy" decoding="async" alt="AI-directed editorial visual of sculptural architectural forms and warm stone materials" src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=80" />
-            <figcaption>Editorial Still / Systems &amp; Structure</figcaption>
+          <figure class="media">
+            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1464802686167-b939a6910659?auto=format&fit=crop&w=1500&q=80" alt="AI-styled editorial still life showing abstract system forms and premium materials" />
+            <figcaption>Campaign Still / Structure &amp; Clarity</figcaption>
           </figure>
         </div>
 
-        <div class="services">
-          <article class="panel" data-reveal>
-            <h3>Premium Custom Websites</h3>
-            <p class="lede">Bespoke websites with elite typography, art-directed media, and conversion-aware architecture for serious buyers.</p>
+        <div class="services-grid">
+          <article class="card" data-reveal>
+            <h3>Website Design &amp; Development</h3>
+            <p class="lede">Custom websites designed to make your business look more established, communicate clearly, and convert more of the right visitors into inquiries.</p>
             <ul>
-              <li>Brand narrative and page strategy</li>
-              <li>Cinematic visual composition and responsive build</li>
-              <li>Accessibility, performance, and modern UX polish</li>
+              <li>Premium design that builds trust</li>
+              <li>Messaging structured for clarity</li>
+              <li>Fast, modern, mobile-ready builds</li>
             </ul>
           </article>
-          <article class="panel" data-reveal>
+
+          <article class="card" data-reveal>
             <h3>AI Automations</h3>
-            <p>Lead intake, qualification, follow-up, and routing systems designed to reduce missed opportunities without adding operational clutter.</p>
+            <p>Automations that handle repetitive tasks, reduce delays, and improve consistency across lead response, scheduling, routing, and communication.</p>
             <ul>
-              <li>Fast first response orchestration</li>
-              <li>Structured nurture logic</li>
-              <li>Cross-channel automation integrity</li>
+              <li>Faster response to new leads</li>
+              <li>Less manual follow-up</li>
+              <li>Better internal handoffs</li>
             </ul>
           </article>
-          <article class="panel" data-reveal>
-            <h3>Workflow Systems</h3>
-            <p>CRM, scheduling, communication, and accountability layers optimized for teams in healthcare, legal, recruiting, real estate, and home services.</p>
+
+          <article class="card" data-reveal>
+            <h3>Systems &amp; Workflow Optimization</h3>
+            <p>Operational systems that connect the tools your business already uses and remove unnecessary bottlenecks from day-to-day work.</p>
             <ul>
-              <li>Business process optimization</li>
-              <li>Handoff clarity from inquiry to close</li>
-              <li>Operational visibility for leadership</li>
+              <li>Cleaner pipelines and processes</li>
+              <li>Fewer missed steps</li>
+              <li>Better visibility across workflows</li>
             </ul>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-us">
+      <div class="container why-grid">
+        <div data-reveal>
+          <p class="eyebrow">Why Clients Choose Us</p>
+          <h2>We design your digital presence and the systems behind it.</h2>
+          <p class="lede">Our work is built to improve how your business is perceived and how your operations perform, without unnecessary complexity.</p>
+        </div>
+        <div class="why-list" data-reveal>
+          <article class="card"><h3>Built around your business</h3><p>We do not force your company into a generic template. We design around your workflow, offer, and customer journey.</p></article>
+          <article class="card"><h3>A better first impression</h3><p>Your website should make your business feel more credible before a conversation ever starts.</p></article>
+          <article class="card"><h3>Automation with a real purpose</h3><p>The goal is not automation for its own sake. It is better follow-up, cleaner execution, and less wasted time.</p></article>
+          <article class="card"><h3>Designed for growth</h3><p>As your business scales, your systems should become clearer, not more chaotic.</p></article>
         </div>
       </div>
     </section>
 
     <section id="results">
       <div class="container">
-        <div class="story-grid" style="margin-bottom:1.2rem;" data-reveal>
-          <figure class="media-card">
-            <img loading="lazy" decoding="async" alt="AI-directed abstract image suggesting data flow and precision through layered glass and steel" src="https://images.unsplash.com/photo-1527576539890-dfa815648363?auto=format&fit=crop&w=1400&q=80" />
-            <figcaption>Campaign Visual / Flow &amp; Precision</figcaption>
+        <div class="split" style="grid-template-columns:.95fr 1.05fr; margin-bottom:1.1rem;" data-reveal>
+          <figure class="media">
+            <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1527576539890-dfa815648363?auto=format&fit=crop&w=1500&q=80" alt="High-end editorial visual metaphor for orderly systems and controlled flow" />
+            <figcaption>Editorial Visual / Results</figcaption>
           </figure>
           <div>
-            <p class="eyebrow">Results</p>
-            <h2>Representative outcomes from service-led growth environments.</h2>
-            <p class="lede">Each engagement combines visual credibility and operating discipline, so conversion improves without sacrificing client experience.</p>
+            <p class="eyebrow">Results / Case Studies</p>
+            <h2>Proof shaped by credibility, response speed, and cleaner operations.</h2>
           </div>
         </div>
 
-        <div class="cases">
-          <article class="case" data-reveal>
-            <div class="case-head"><strong>Healthcare Network</strong><span>Case 01</span></div>
-            <p><strong>Built:</strong> Repositioned multi-location website, referral routing, and appointment lead triage.</p>
-            <p class="result">Outcome: cleaner patient inquiry flow and higher-confidence conversions.</p>
+        <div class="results-grid" style="grid-template-columns:repeat(3,minmax(0,1fr));">
+          <article class="result" data-reveal>
+            <div class="result-head"><strong>Professional services firm</strong><span>Case Study 01</span></div>
+            <p>A dated online presence made the business look smaller than it was. We redesigned the website structure, clarified the messaging, and elevated the presentation to create a stronger first impression.</p>
+            <p class="outcome">Outcome: Stronger credibility and better-quality inbound inquiries.</p>
           </article>
-          <article class="case" data-reveal>
-            <div class="case-head"><strong>Recruiting Firm</strong><span>Case 02</span></div>
-            <p><strong>Built:</strong> Missed-call recovery, CRM qualification logic, and follow-up sequence automation.</p>
-            <p class="result">Outcome: faster prospect response rhythm and reduced manual coordination.</p>
+
+          <article class="result" data-reveal>
+            <div class="result-head"><strong>Local service business</strong><span>Case Study 02</span></div>
+            <p>Leads were coming in, but follow-up was inconsistent and too dependent on manual effort. We implemented automated response flows, routing, and CRM updates.</p>
+            <p class="outcome">Outcome: Faster lead handling and fewer missed opportunities.</p>
           </article>
-          <article class="case" data-reveal>
-            <div class="case-head"><strong>Real Estate Team</strong><span>Case 03</span></div>
-            <p><strong>Built:</strong> Premium lead-gen site, intent capture, and booking handoff between ISA and agents.</p>
-            <p class="result">Outcome: more consistent consultations and smoother team handoffs.</p>
+
+          <article class="result" data-reveal>
+            <div class="result-head"><strong>Recruiting and staffing company</strong><span>Case Study 03</span></div>
+            <p>The team needed a more efficient way to manage front-end lead capture and back-end workflow movement. We designed a cleaner digital experience and connected operational steps behind the scenes.</p>
+            <p class="outcome">Outcome: Less admin friction and a more organized pipeline.</p>
           </article>
         </div>
       </div>
@@ -609,78 +633,80 @@
 
     <section id="architecture">
       <div class="container">
-        <div class="story-grid" style="margin-bottom:1rem;" data-reveal>
-          <div>
-            <p class="eyebrow">Automation Architecture</p>
-            <h2>Systemized lead handling from first signal to booked conversation.</h2>
-          </div>
-          <figure class="media-card">
-            <img loading="lazy" decoding="async" alt="AI-directed editorial still of abstract interface layers and grid systems" src="https://images.unsplash.com/photo-1464802686167-b939a6910659?auto=format&fit=crop&w=1400&q=80" />
-            <figcaption>Architecture Visual / Control &amp; Clarity</figcaption>
-          </figure>
+        <div class="tight" data-reveal style="margin-bottom:1rem;">
+          <p class="eyebrow">Automation Architecture</p>
+          <h2>Systems that move with your business.</h2>
+          <p class="lede">Automations work best when they feel invisible to the customer and obvious to the business.</p>
+          <p class="lede">We build workflows for practical use cases such as lead intake, instant follow-up, CRM updates, appointment reminders, routing, and internal notifications, so the business responds faster and operates with less friction.</p>
         </div>
 
-        <div class="architecture" data-reveal>
+        <article class="architecture" data-reveal>
           <div class="arch-grid">
-            <article class="arch-item"><h3>1. Capture</h3><p>Forms, calls, and chat signals normalized into one lead record.</p></article>
-            <article class="arch-item"><h3>2. Qualify</h3><p>Business rules classify urgency, value, location, and service fit.</p></article>
-            <article class="arch-item"><h3>3. Route</h3><p>CRM assignment and owner notification based on territory and intent.</p></article>
-            <article class="arch-item"><h3>4. Follow Through</h3><p>Automated reminders, sequence logic, and accountability checkpoints.</p></article>
+            <div class="arch-item"><h3>Website inquiry</h3><p>Instant response</p></div>
+            <div class="arch-item"><h3>Form submission</h3><p>CRM update</p></div>
+            <div class="arch-item"><h3>Missed call</h3><p>Text-back flow</p></div>
+            <div class="arch-item"><h3>New lead</h3><p>Pipeline assignment</p></div>
+            <div class="arch-item"><h3>Internal task</h3><p>Automated notification</p></div>
           </div>
-        </div>
+          <div class="workflow-tags" aria-label="Example workflow labels">
+            <span class="tag">Website inquiry → instant response</span>
+            <span class="tag">Form submission → CRM update</span>
+            <span class="tag">Missed call → text-back flow</span>
+            <span class="tag">New lead → pipeline assignment</span>
+            <span class="tag">Internal task → automated notification</span>
+          </div>
+        </article>
       </div>
     </section>
 
     <section id="industries">
       <div class="container" data-reveal>
-        <p class="eyebrow">Industries Served</p>
-        <h2>Built for organizations where trust, response speed, and process quality matter.</h2>
-        <ul class="industry-grid" style="margin:1.1rem 0 0; padding:0;">
-          <li class="industry">Local Businesses</li>
-          <li class="industry">Healthcare Companies</li>
-          <li class="industry">Recruiting Firms</li>
-          <li class="industry">Law Firms</li>
-          <li class="industry">Home Services</li>
-          <li class="industry">Real Estate Teams</li>
-          <li class="industry">Professional Services</li>
-          <li class="industry">Modern Operators &amp; Founders</li>
+        <p class="eyebrow">Industries</p>
+        <h2>Built for businesses where trust and speed matter.</h2>
+        <p class="lede">We work across industries where presentation, follow-up, and operational clarity directly affect growth.</p>
+        <ul class="industry-grid">
+          <li>Healthcare</li>
+          <li>Recruiting</li>
+          <li>Legal</li>
+          <li>Real Estate</li>
+          <li>Home Services</li>
+          <li>Professional Services</li>
+          <li>Local Businesses</li>
+          <li>Growth-stage Companies</li>
         </ul>
       </div>
     </section>
 
     <section id="process">
       <div class="container">
-        <div class="tight" data-reveal style="margin-bottom:1.2rem;">
+        <div class="tight" data-reveal style="margin-bottom:1.1rem;">
           <p class="eyebrow">Process</p>
-          <h2>A precise delivery model designed for calm execution.</h2>
+          <h2>A more considered process.</h2>
         </div>
         <div class="process">
-          <article class="step" data-reveal><div class="num">01</div><div class="panel"><h3>Discover</h3><p>Audit positioning, conversion pathways, and internal workflow realities.</p></div></article>
-          <article class="step" data-reveal><div class="num">02</div><div class="panel"><h3>Architect</h3><p>Define website structure, content hierarchy, and automation blueprint.</p></div></article>
-          <article class="step" data-reveal><div class="num">03</div><div class="panel"><h3>Build</h3><p>Develop visual system, production pages, integrations, and follow-up logic.</p></div></article>
-          <article class="step" data-reveal><div class="num">04</div><div class="panel"><h3>Refine</h3><p>Optimize interaction friction, reporting visibility, and operational consistency.</p></div></article>
+          <article class="step" data-reveal><div class="num">01</div><div class="card"><h3>Discover</h3><p>We learn how your business works, where leads come from, and where friction exists.</p></div></article>
+          <article class="step" data-reveal><div class="num">02</div><div class="card"><h3>Plan</h3><p>We define the right structure, messaging, and automation opportunities before anything gets built.</p></div></article>
+          <article class="step" data-reveal><div class="num">03</div><div class="card"><h3>Build</h3><p>We design the website, implement the system, and connect the workflow pieces that matter most.</p></div></article>
+          <article class="step" data-reveal><div class="num">04</div><div class="card"><h3>Refine</h3><p>We improve clarity, polish, and performance so the final result works in practice, not just on paper.</p></div></article>
         </div>
       </div>
     </section>
 
     <section id="testimonials">
       <div class="container">
-        <div class="tight" data-reveal style="margin-bottom:1.1rem;">
+        <div class="tight" data-reveal style="margin-bottom:1rem;">
           <p class="eyebrow">Testimonials</p>
-          <h2>Trusted by teams that expect premium outcomes and operational rigor.</h2>
+          <h2>What clients say after the work goes live.</h2>
         </div>
-        <div class="testimonials">
+        <div class="testimonials-grid">
           <blockquote class="quote" data-reveal>
-            <p>“They elevated our brand perception immediately and removed major friction from intake and scheduling.”</p>
-            <cite>COO, Multi-Location Healthcare Group</cite>
+            <p>“Working with Alivio Studio made our business feel more established almost immediately. The site looked sharper, and the process behind it was far more organized.”</p>
           </blockquote>
           <blockquote class="quote" data-reveal>
-            <p>“Our follow-up finally feels intentional. Response quality improved without adding internal chaos.”</p>
-            <cite>Managing Partner, Recruiting Firm</cite>
+            <p>“The automation work saved our team time every single week. More importantly, it made follow-up more consistent.”</p>
           </blockquote>
           <blockquote class="quote" data-reveal>
-            <p>“The work feels art directed and operationally mature. It changed how prospects view us on first contact.”</p>
-            <cite>Founder, Regional Services Company</cite>
+            <p>“They understood both presentation and operations, which is rare. We ended up with a better website and a better system.”</p>
           </blockquote>
         </div>
       </div>
@@ -690,30 +716,63 @@
       <div class="tight">
         <div data-reveal style="margin-bottom:.8rem;">
           <p class="eyebrow">FAQ</p>
-          <h2>Clear expectations for scope, timeline, and partnership.</h2>
+          <h2>Practical answers before we begin.</h2>
         </div>
-        <details data-reveal><summary>What do you build beyond websites?</summary><p>We also implement AI automations, lead handling, follow-up systems, and workflow optimization tailored to your operating model.</p></details>
-        <details data-reveal><summary>Can Alivio Studio support local businesses?</summary><p>Yes. We frequently work with local and regional operators that need premium positioning and reliable internal systems.</p></details>
-        <details data-reveal><summary>Which industries are your best fit?</summary><p>Healthcare, law, recruiting, home services, real estate, and professional services teams with serious growth intent.</p></details>
-        <details data-reveal><summary>Do you offer ongoing optimization?</summary><p>Yes. Post-launch support includes conversion tuning, automation refinement, and process evolution as your business scales.</p></details>
+
+        <details data-reveal>
+          <summary>1. Who do you work with?</summary>
+          <p>We work with businesses across industries, including local companies, professional services, healthcare groups, recruiting firms, and operators who want a more credible presence and better workflows.</p>
+        </details>
+        <details data-reveal>
+          <summary>2. Do you only build websites?</summary>
+          <p>No. We also build automations and business systems that improve lead handling, communication, routing, scheduling, and internal operations.</p>
+        </details>
+        <details data-reveal>
+          <summary>3. What kinds of automations can you create?</summary>
+          <p>Examples include lead follow-up, CRM syncing, appointment reminders, intake routing, pipeline movement, alerts, and process automation tied to day-to-day operations.</p>
+        </details>
+        <details data-reveal>
+          <summary>4. Can you work with local businesses?</summary>
+          <p>Yes. The offer is designed to work for both local businesses and broader service companies that need stronger presentation and better systems.</p>
+        </details>
+        <details data-reveal>
+          <summary>5. How long does a typical project take?</summary>
+          <p>That depends on scope, but most projects start with discovery and are shaped around the business priorities, timeline, and complexity of the system being built.</p>
+        </details>
+        <details data-reveal>
+          <summary>6. Do you offer ongoing support?</summary>
+          <p>Yes. Ongoing support can include updates, refinements, additional automations, and continued optimization after launch.</p>
+        </details>
       </div>
     </section>
 
     <section id="contact">
       <div class="container">
-        <article class="cta" data-reveal>
+        <article class="cta-wrap" data-reveal>
           <div>
-            <p class="eyebrow">Final Call to Action</p>
-            <h2>Build a world-class digital presence with systems that perform under pressure.</h2>
-            <p class="lede">If your company is ready for premium presentation, faster lead response, and cleaner internal execution, we can design the next operating layer together.</p>
-            <p style="margin-top:1rem;">hello@aliviostudio.com</p>
+            <p class="eyebrow">Final CTA</p>
+            <h2>If your business needs a better digital presence and better systems, let’s start there.</h2>
+            <p class="lede">We help businesses improve how they present themselves online and how they operate behind the scenes. If that is the next step for your company, we should talk.</p>
           </div>
-          <form aria-label="Project inquiry">
-            <div><label for="name">Name</label><input id="name" name="name" autocomplete="name" required /></div>
-            <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
-            <div><label for="company">Company</label><input id="company" name="company" autocomplete="organization" /></div>
-            <div><label for="message">Project Brief</label><textarea id="message" name="message" required></textarea></div>
-            <button class="btn btn-primary" type="submit">Submit Inquiry</button>
+
+          <form aria-label="Contact form">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" autocomplete="name" required />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div>
+              <label for="company">Company</label>
+              <input id="company" name="company" autocomplete="organization" />
+            </div>
+            <div>
+              <label for="help">What do you need help with?</label>
+              <textarea id="help" name="help" required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Start the Conversation</button>
           </form>
         </article>
       </div>
@@ -721,22 +780,22 @@
   </main>
 
   <footer>
-    <div class="container foot">
+    <div class="container footer-grid">
       <div>
         <a class="brand" href="#top" aria-label="Back to top"><span>Alivio Studio</span></a>
-        <p class="lede">Luxury-level website design, AI automations, lead handling systems, and operational architecture for modern service businesses.</p>
+        <p class="lede">Premium websites and intelligent systems for modern businesses.</p>
       </div>
-      <nav aria-label="Footer navigation" style="display:grid;gap:.4rem;">
+      <nav aria-label="Footer navigation" style="display:grid; gap:.35rem;">
         <a href="#services">Services</a>
         <a href="#results">Results</a>
-        <a href="#architecture">Architecture</a>
         <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </nav>
       <div>
         <p>hello@aliviostudio.com</p>
         <p>Mon–Fri / 9:00–5:00</p>
-        <p style="margin-top:.9rem; font-size:.9rem;">© <span id="year"></span> Alivio Studio</p>
+        <p style="margin-top:.7rem; font-size:.9rem;">© <span id="year"></span> Alivio Studio</p>
       </div>
     </div>
   </footer>
@@ -746,16 +805,17 @@
     const header = document.getElementById('site-header');
     const toggle = document.getElementById('theme-toggle');
     const year = document.getElementById('year');
+    const revealables = document.querySelectorAll('[data-reveal]');
     const form = document.querySelector('form');
 
     year.textContent = new Date().getFullYear();
 
-    const preferred = localStorage.getItem('alivio-theme');
-    if (preferred === 'dark') root.setAttribute('data-theme', 'dark');
+    const savedTheme = localStorage.getItem('alivio-theme');
+    if (savedTheme === 'dark') root.setAttribute('data-theme', 'dark');
 
     toggle?.addEventListener('click', () => {
-      const dark = root.getAttribute('data-theme') === 'dark';
-      if (dark) {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      if (isDark) {
         root.removeAttribute('data-theme');
         localStorage.setItem('alivio-theme', 'light');
       } else {
@@ -768,28 +828,31 @@
       header.classList.toggle('scrolled', window.scrollY > 8);
     }, { passive: true });
 
-    const revealables = document.querySelectorAll('[data-reveal]');
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('shown');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.14 });
-    revealables.forEach((el) => observer.observe(el));
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('shown');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.16 });
+      revealables.forEach((node) => observer.observe(node));
+    } else {
+      revealables.forEach((node) => node.classList.add('shown'));
+    }
 
-    form?.addEventListener('submit', (event) => {
-      event.preventDefault();
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
       const original = btn.textContent;
       btn.textContent = 'Received';
       btn.disabled = true;
       setTimeout(() => {
         form.reset();
-        btn.textContent = original;
         btn.disabled = false;
-      }, 1400);
+        btn.textContent = original;
+      }, 1300);
     });
   </script>
 </body>
